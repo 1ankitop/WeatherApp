@@ -3,12 +3,12 @@ const cityInput = document.getElementById("city-input");
 const searchBtn = document.getElementById("search-btn");
 const geoBtn = document.getElementById("geo-btn");
 
-// Initialization
+
 window.addEventListener("DOMContentLoaded", () => {
-    fetchWeather("Delhi"); // Default City
+    fetchWeather("Delhi"); 
 });
 
-// Primary Fetch Function
+
 async function fetchWeather(city) {
     try {
         const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -35,7 +35,7 @@ async function fetchWeather(city) {
     }
 }
 
-// Update UI: Current Weather
+
 function updateCurrentWeather(data) {
     document.getElementById("city-name").innerText = data.name;
     document.getElementById("current-date").innerText = new Date().toLocaleDateString('en-US', { weekday: 'long', day: 'numeric', month: 'short' });
@@ -48,7 +48,7 @@ function updateCurrentWeather(data) {
     document.getElementById("wind-speed").innerText = `${data.wind.speed} km/h`;
     document.getElementById("pressure").innerText = `${data.main.pressure} hPa`;
 
-    // Dynamic Background logic
+    
     if (data.main.temp > 28) {
         document.body.style.background = "linear-gradient(135deg, #f6d365 0%, #fda085 100%)";
     } else {
@@ -56,12 +56,12 @@ function updateCurrentWeather(data) {
     }
 }
 
-// Update UI: 5-Day Forecast
+
 function updateForecast(data) {
     const container = document.getElementById("forecast-container");
     container.innerHTML = "";
 
-    // Filter data to get 1 entry per day (midday)
+    
     const dailyData = data.list.filter(item => item.dt_txt.includes("12:00:00"));
 
     dailyData.forEach(day => {
@@ -79,7 +79,7 @@ function updateForecast(data) {
     });
 }
 
-// Event Listeners
+
 searchBtn.addEventListener("click", () => fetchWeather(cityInput.value));
 
 cityInput.addEventListener("keypress", (e) => {
