@@ -32,7 +32,7 @@ body {
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
-/* Search Area */
+
 .search-section {
     display: flex;
     gap: 12px;
@@ -74,7 +74,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Main Display */
+
 .main-info {
     text-align: center;
     margin-bottom: 30px;
@@ -107,7 +107,7 @@ body {
     letter-spacing: 1px;
 }
 
-/* Stats Grid */
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -134,7 +134,7 @@ body {
     font-weight: 600;
 }
 
-/* Forecast */
+
 .forecast-section h4 {
     margin-bottom: 15px;
     font-weight: 400;
@@ -162,7 +162,7 @@ body {
     font-weight: 600;
 }
 
-/* Error/Fade */
+
 .error-card {
     background: rgba(255, 0, 0, 0.2);
     padding: 15px;
